@@ -59,12 +59,12 @@ set_property -dict { PACKAGE_PIN G19   IOSTANDARD LVCMOS33     } [get_ports { Va
 #set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { ck_io[40] }]; #IO_L16N_T2_13 Sch=ck_io[40]
 #set_property -dict { PACKAGE_PIN Y9    IOSTANDARD LVCMOS33 } [get_ports { ck_io[41] }]; #IO_L14P_T2_SRCC_13 Sch=ck_io[41]
 #set_property -dict { PACKAGE_PIN Y13   IOSTANDARD LVCMOS33 } [get_ports { ck_ioa }]; #IO_L20N_T3_13 Sch=ck_ioa
-set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS33 } [get_ports { shield_SPI_io0_io }]; #IO_L10N_T1_34 Sch=ck_miso
-set_property -dict { PACKAGE_PIN T12   IOSTANDARD LVCMOS33 } [get_ports { shield_SPI_io1_io }]; #IO_L2P_T0_34 Sch=ck_mosi
-set_property -dict { PACKAGE_PIN H15   IOSTANDARD LVCMOS33 } [get_ports { shield_SPI_sck_io }]; #IO_L19P_T3_35 Sch=ck_sck
+#set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS33 } [get_ports { shield_SPI_io0_io }]; #IO_L10N_T1_34 Sch=ck_miso
+#set_property -dict { PACKAGE_PIN T12   IOSTANDARD LVCMOS33 } [get_ports { shield_SPI_io1_io }]; #IO_L2P_T0_34 Sch=ck_mosi
+#set_property -dict { PACKAGE_PIN H15   IOSTANDARD LVCMOS33 } [get_ports { shield_SPI_sck_io }]; #IO_L19P_T3_35 Sch=ck_sck
 set_property -dict { PACKAGE_PIN P16   IOSTANDARD LVCMOS33 } [get_ports { shield_IIC_scl_io }]; #IO_L24N_T3_34 Sch=ck_scl
 set_property -dict { PACKAGE_PIN P15   IOSTANDARD LVCMOS33 } [get_ports { shield_IIC_sda_io }]; #IO_L24P_T3_34 Sch=ck_sda
-set_property -dict { PACKAGE_PIN F16   IOSTANDARD LVCMOS33 } [get_ports { shield_SPI_ss_io }]; #IO_L6P_T0_35 Sch=ck_ss
+#set_property -dict { PACKAGE_PIN F16   IOSTANDARD LVCMOS33 } [get_ports { shield_SPI_ss_io }]; #IO_L6P_T0_35 Sch=ck_ss
 #set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { crypto_sda }]; #IO_25_35 Sch=crypto_sda
 #set_property -dict { PACKAGE_PIN H17   IOSTANDARD LVCMOS33 } [get_ports { hdmi_rx_cec }]; #IO_L13N_T2_MRCC_35 Sch=hdmi_rx_cec
 set_property -dict { PACKAGE_PIN P19   IOSTANDARD TMDS_33     } [get_ports { TMDS_In_clk_n }]; #IO_L13N_T2_MRCC_34 Sch=hdmi_rx_clk_n

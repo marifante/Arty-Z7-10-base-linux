@@ -1,10 +1,11 @@
--- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Wed Mar 28 00:12:14 2018
--- Host        : ubuntu running 64-bit Ubuntu 16.04.3 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/digilent/work/git/Arty-Z7-10-base-linux/src/bd/Arty_Z7_10/ip/Arty_Z7_10_clk_wiz_0_0/Arty_Z7_10_clk_wiz_0_0_sim_netlist.vhdl
+-- Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+-- Date        : Sun Feb 16 11:31:06 2025
+-- Host        : marifante-AORUS-15P-KD running 64-bit Ubuntu 24.04.1 LTS
+-- Command     : write_vhdl -force -mode funcsim -rename_top Arty_Z7_10_clk_wiz_0_0 -prefix
+--               Arty_Z7_10_clk_wiz_0_0_ Arty_Z7_10_clk_wiz_0_0_sim_netlist.vhdl
 -- Design      : Arty_Z7_10_clk_wiz_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +21,6 @@ entity Arty_Z7_10_clk_wiz_0_0_Arty_Z7_10_clk_wiz_0_0_clk_wiz is
     resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Arty_Z7_10_clk_wiz_0_0_Arty_Z7_10_clk_wiz_0_0_clk_wiz : entity is "Arty_Z7_10_clk_wiz_0_0_clk_wiz";
 end Arty_Z7_10_clk_wiz_0_0_Arty_Z7_10_clk_wiz_0_0_clk_wiz;
 
 architecture STRUCTURE of Arty_Z7_10_clk_wiz_0_0_Arty_Z7_10_clk_wiz_0_0_clk_wiz is

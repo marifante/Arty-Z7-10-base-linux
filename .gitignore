@@ -73,3 +73,5 @@ proj/*
 
 # keep the empty folders
 !/**/.keep
+src/bd/Arty_Z7_10/ipshared/
+src/bd/Arty_Z7_10/ip/

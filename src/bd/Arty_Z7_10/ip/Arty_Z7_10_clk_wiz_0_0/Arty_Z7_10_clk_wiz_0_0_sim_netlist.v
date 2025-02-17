@@ -1,10 +1,11 @@
-// Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Wed Mar 28 00:12:14 2018
-// Host        : ubuntu running 64-bit Ubuntu 16.04.3 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/digilent/work/git/Arty-Z7-10-base-linux/src/bd/Arty_Z7_10/ip/Arty_Z7_10_clk_wiz_0_0/Arty_Z7_10_clk_wiz_0_0_sim_netlist.v
+// Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+// Date        : Sun Feb 16 11:31:06 2025
+// Host        : marifante-AORUS-15P-KD running 64-bit Ubuntu 24.04.1 LTS
+// Command     : write_verilog -force -mode funcsim -rename_top Arty_Z7_10_clk_wiz_0_0 -prefix
+//               Arty_Z7_10_clk_wiz_0_0_ Arty_Z7_10_clk_wiz_0_0_sim_netlist.v
 // Design      : Arty_Z7_10_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -21,7 +22,7 @@ module Arty_Z7_10_clk_wiz_0_0
   input resetn;
   input clk_in1;
 
-  (* IBUF_LOW_PWR *) wire clk_in1;
+  (* IBUF_LOW_PWR *) (* RTL_KEEP = "yes" *) wire clk_in1;
   wire clk_out1;
   wire resetn;
 
@@ -31,7 +32,6 @@ module Arty_Z7_10_clk_wiz_0_0
         .resetn(resetn));
 endmodule
 
-(* ORIG_REF_NAME = "Arty_Z7_10_clk_wiz_0_0_clk_wiz" *) 
 module Arty_Z7_10_clk_wiz_0_0_Arty_Z7_10_clk_wiz_0_0_clk_wiz
    (clk_out1,
     resetn,
@@ -143,12 +143,15 @@ module glbl ();
 
     parameter ROC_WIDTH = 100000;
     parameter TOC_WIDTH = 0;
+    parameter GRES_WIDTH = 10000;
+    parameter GRES_START = 10000;
 
 //--------   STARTUP Globals --------------
     wire GSR;
     wire GTS;
     wire GWE;
     wire PRLD;
+    wire GRESTORE;
     tri1 p_up_tmp;
     tri (weak1, strong0) PLL_LOCKG = p_up_tmp;
 
@@ -161,6 +164,7 @@ module glbl ();
     reg GSR_int;
     reg GTS_int;
     reg PRLD_int;
+    reg GRESTORE_int;
 
 //--------   JTAG Globals --------------
     wire JTAG_TDO_GLBL;
@@ -188,6 +192,7 @@ module glbl ();
     assign (strong1, weak0) GSR = GSR_int;
     assign (strong1, weak0) GTS = GTS_int;
     assign (weak1, weak0) PRLD = PRLD_int;
+    assign (strong1, weak0) GRESTORE = GRESTORE_int;
 
     initial begin
 	GSR_int = 1'b1;
@@ -201,6 +206,14 @@ module glbl ();
 	GTS_int = 1'b1;
 	#(TOC_WIDTH)
 	GTS_int = 1'b0;
+    end
+
+    initial begin 
+	GRESTORE_int = 1'b0;
+	#(GRES_START);
+	GRESTORE_int = 1'b1;
+	#(GRES_WIDTH);
+	GRESTORE_int = 1'b0;
     end
 
 endmodule
