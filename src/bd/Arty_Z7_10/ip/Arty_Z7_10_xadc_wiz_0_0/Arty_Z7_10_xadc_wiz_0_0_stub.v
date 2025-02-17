@@ -1,10 +1,11 @@
-// Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Wed Mar 28 00:12:22 2018
-// Host        : ubuntu running 64-bit Ubuntu 16.04.3 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/digilent/work/git/Arty-Z7-10-base-linux/src/bd/Arty_Z7_10/ip/Arty_Z7_10_xadc_wiz_0_0/Arty_Z7_10_xadc_wiz_0_0_stub.v
+// Tool Version: Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+// Date        : Sun Feb 16 11:31:55 2025
+// Host        : marifante-AORUS-15P-KD running 64-bit Ubuntu 24.04.1 LTS
+// Command     : write_verilog -force -mode synth_stub -rename_top Arty_Z7_10_xadc_wiz_0_0 -prefix
+//               Arty_Z7_10_xadc_wiz_0_0_ Arty_Z7_10_xadc_wiz_0_0_stub.v
 // Design      : Arty_Z7_10_xadc_wiz_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
@@ -13,6 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
+(* core_generation_info = "Arty_Z7_10_xadc_wiz_0_0,xadc_wiz_v3_3_11,{component_name=Arty_Z7_10_xadc_wiz_0_0,enable_axi=true,enable_axi4stream=false,dclk_frequency=100,enable_busy=true,enable_convst=false,enable_convstclk=false,enable_dclk=true,enable_drp=false,enable_eoc=true,enable_eos=true,enable_vbram_alaram=false,enable_vccddro_alaram=false,enable_Vccint_Alaram=true,enable_Vccaux_alaram=trueenable_vccpaux_alaram=true,enable_vccpint_alaram=true,ot_alaram=true,user_temp_alaram=true,timing_mode=continuous,channel_averaging=None,sequencer_mode=on,startup_channel_selection=contineous_sequence}" *) 
 module Arty_Z7_10_xadc_wiz_0_0(s_axi_aclk, s_axi_aresetn, s_axi_awaddr, 
   s_axi_awvalid, s_axi_awready, s_axi_wdata, s_axi_wstrb, s_axi_wvalid, s_axi_wready, 
   s_axi_bresp, s_axi_bvalid, s_axi_bready, s_axi_araddr, s_axi_arvalid, s_axi_arready, 
@@ -21,8 +23,9 @@ module Arty_Z7_10_xadc_wiz_0_0(s_axi_aclk, s_axi_aresetn, s_axi_awaddr,
   vauxn13, vauxp15, vauxn15, busy_out, channel_out, eoc_out, eos_out, ot_out, vccpint_alarm_out, 
   vccpaux_alarm_out, vccaux_alarm_out, vccint_alarm_out, user_temp_alarm_out, alarm_out, 
   vp_in, vn_in)
-/* synthesis syn_black_box black_box_pad_pin="s_axi_aclk,s_axi_aresetn,s_axi_awaddr[10:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[10:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,ip2intc_irpt,vauxp0,vauxn0,vauxp1,vauxn1,vauxp5,vauxn5,vauxp6,vauxn6,vauxp8,vauxn8,vauxp9,vauxn9,vauxp12,vauxn12,vauxp13,vauxn13,vauxp15,vauxn15,busy_out,channel_out[4:0],eoc_out,eos_out,ot_out,vccpint_alarm_out,vccpaux_alarm_out,vccaux_alarm_out,vccint_alarm_out,user_temp_alarm_out,alarm_out,vp_in,vn_in" */;
-  input s_axi_aclk;
+/* synthesis syn_black_box black_box_pad_pin="s_axi_aresetn,s_axi_awaddr[10:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[10:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,ip2intc_irpt,vauxp0,vauxn0,vauxp1,vauxn1,vauxp5,vauxn5,vauxp6,vauxn6,vauxp8,vauxn8,vauxp9,vauxn9,vauxp12,vauxn12,vauxp13,vauxn13,vauxp15,vauxn15,busy_out,channel_out[4:0],eoc_out,eos_out,ot_out,vccpint_alarm_out,vccpaux_alarm_out,vccaux_alarm_out,vccint_alarm_out,user_temp_alarm_out,alarm_out,vp_in,vn_in" */
+/* synthesis syn_force_seq_prim="s_axi_aclk" */;
+  input s_axi_aclk /* synthesis syn_isclock = 1 */;
   input s_axi_aresetn;
   input [10:0]s_axi_awaddr;
   input s_axi_awvalid;
